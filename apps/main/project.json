@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/main",
   "sourceRoot": "apps/main/src",
   "prefix": "shoosha",
   "targets": {
@@ -61,7 +60,10 @@
           "browserTarget": "main:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/main/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
