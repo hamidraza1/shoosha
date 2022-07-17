@@ -1,5 +1,6 @@
 {
   "projectType": "application",
+  "root": "apps/main",
   "sourceRoot": "apps/main/src",
   "prefix": "shoosha",
   "targets": {
