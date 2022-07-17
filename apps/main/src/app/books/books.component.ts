@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GlobalState } from '../state/reducers';
+import { BooksService } from './books.service';
+import { BooksActions } from './state/actions';
 
 @Component({
   selector: 'shoosha-books',
@@ -6,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books.component.scss'],
 })
 export class BooksComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store<GlobalState>) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.store.dispatch(BooksActions.loadMany());
+  }
 }
